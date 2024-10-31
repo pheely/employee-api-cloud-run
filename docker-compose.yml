@@ -1,0 +1,22 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    restart: always
+    environment: 
+      - DB_USER=root
+      - DB_PASS=
+      - DB_NAME=hr
+      - DB_PRIVATE_IP=
+      - INSTANCE_CONNECTION_NAME=sqldb
+      # - DB=mysql://root:@tcp(sqldb:3306)/hr
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+  sqldb:
+    build: 
+      context: .
+      dockerfile: Dockerfile.mysql    
+  redis:
+    image: redis:6-alpine

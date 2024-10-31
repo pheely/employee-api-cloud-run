@@ -1,0 +1,19 @@
+apiVersion: skaffold/v4beta7
+kind: Config
+metadata: 
+  name: employee-api-cloud-run-service
+profiles:
+- name: ist
+  manifests:
+    rawYaml:
+    - employee-ist.yaml
+- name: uat
+  manifests:
+    rawYaml:
+    - employee-uat.yaml
+- name: prd
+  manifests:
+    rawYaml:
+    - employee-prd.yaml
+deploy:
+  cloudrun: {}

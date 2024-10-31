@@ -1,0 +1,7 @@
+project_id   = "ibcwe-event-layer-f3ccf6d9"
+region       = "us-central1"
+service_name = "employee-service"
+image_name   = "us-central1-docker.pkg.dev/ibcwe-event-layer-f3ccf6d9/cloud-run-try/employee-service@sha256:1e51ac7859fe72db393e3a045cc8594358f16bb6cfa020cad6c18012e55d6e84"
+sa           = "gyre-dataflow@ibcwe-event-layer-f3ccf6d9.iam.gserviceaccount.com"
+sub_name     = "employee-creation-sub"
+push_path    = "/event/create"
